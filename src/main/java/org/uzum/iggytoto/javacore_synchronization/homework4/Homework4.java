@@ -44,7 +44,7 @@ public class Homework4 {
         public void run() {
             try {
                 System.out.printf("Автомобиль №%d подъехал к стартовой прямой.\n", carNumber);
-                START.arriveAndAwaitAdvance();
+                START.arriveAndAwaitAdvance(); // it will waite until arrived count == 8
 
                 Long marshTime = System.currentTimeMillis();
                 Thread.sleep(TRACK_LENGTH / carSpeed);
