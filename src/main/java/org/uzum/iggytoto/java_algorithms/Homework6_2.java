@@ -34,6 +34,31 @@ package org.uzum.iggytoto.java_algorithms;
  */
 public class Homework6_2 {
     public int longestMonotonicSubarray(int[] nums) {
-        return -1;
+        int maxLength = 1;
+
+        //finding max increasing sub arrays length
+        int length = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                length++;
+            } else {
+                length = 1;
+            }
+
+            maxLength = Math.max(maxLength, length);
+        }
+
+        //finding max decreasing sub arrays length
+        length = 1;
+        for (int i = 1; i < nums.length; i++) {
+            if (nums[i] < nums[i - 1]) {
+                length++;
+            } else {
+                length = 1;
+            }
+            maxLength = Math.max(maxLength, length);
+        }
+
+        return maxLength;
     }
 }
