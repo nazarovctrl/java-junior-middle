@@ -61,19 +61,12 @@ public class Homework6_1 {
             throw new IllegalArgumentException();
         }
         if (root.children == null || root.children.isEmpty()) {
-            return 0;
-        }
-        return maxDepthRoot(root);
-    }
-
-    public int maxDepthRoot(Node root) {
-        if (root.children == null || root.children.isEmpty()) {
             return 1;
         }
 
         int maxChildDepth = 0;
         for (Node child : root.children) {
-            maxChildDepth = Math.max(maxChildDepth, maxDepthRoot(child));
+            maxChildDepth = Math.max(maxChildDepth, maxDepth(child));
         }
         return maxChildDepth + 1;
     }
